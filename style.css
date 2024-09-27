@@ -7,7 +7,7 @@ body {
 canvas {
   border: 4px solid #000;
   border-bottom: transparent;
-  background: url('./bkg.png') no-repeat;
+  background: url('/bkg.png') no-repeat;
   background-position: -523px -20px;
   background-size: 2500px;
   margin: 50px auto;
