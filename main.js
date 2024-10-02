@@ -147,7 +147,14 @@ function ballMovement() {
         y + dy > paddleY
 
     if ( isBallSameXAsPaddle && isBallTouchingPaddle ) {
-        dy = -dy
+        const relativeX = (x - paddleX) / paddleWidth
+        const maxAngle = Math.PI / 3
+
+        const bounceAngle = relativeX * 2 * maxAngle - maxAngle
+
+        const speed = Math.sqrt(dx * dx + dy * dy)
+        dx = speed * Math.sin(bounceAngle)
+        dy = -Math.abs(speed * Math.cos(bounceAngle))
     } else if (
         y + dy > canvas.height - ballRadius ||
         y + dy > paddleY + paddleHeight       
